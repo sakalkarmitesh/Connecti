@@ -1,0 +1,29 @@
+#body-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: darkslateblue; }
+  #body-header h3 {
+    padding-left: 17px; }
+    #body-header h3 a {
+      color: whitesmoke;
+      font-size: 2.5rem;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      margin-left: 10px;
+      font-family: monospace;
+      text-decoration: none; }
+    #body-header h3 i {
+      font-size: 2.5rem;
+      color: white; }
+  #body-header .user {
+    display: inline-block; }
+    #body-header .user li {
+      display: inline-block;
+      margin-top: 6px; }
+    #body-header .user a {
+      color: whitesmoke;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border: 1px solid darkseagreen;
+      border-radius: 20px;
+      padding: 10px; }

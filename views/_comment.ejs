@@ -1,0 +1,21 @@
+<li id="comment-<%=post._id%>">
+    <div class="comment-user-profile-pic">
+        <% if(post.user.avatar) {%>
+            <img src="<%= post.user.avatar %>">
+        <% }else{ %>
+            <img src="/images/default-avatar.jpg">
+        <% } %>
+    </div>
+
+    <div class="comment-card">
+        <div class="comment-user-name">
+            
+            <a href="/users/profile/<%=comment.user._id%>"><%=comment.user.name %></a>
+        </div>
+        <div class="comment-content">
+            <%=comment.content%>
+               
+        </div>
+    </div>
+   
+</li>

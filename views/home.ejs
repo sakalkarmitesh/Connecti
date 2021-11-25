@@ -1,0 +1,50 @@
+<link rel="stylesheet" type="text/css" href="/css/home.css">
+<div id="main-section">
+    <section id="all-users">
+        <div id="all-users-header">People on Connecti</div>
+        <% for(u of all_users) {%>
+            <div class="user-list"><a href="/users/profile/<%= u._id %>">
+                    <%= u.name %>
+                </a></div>
+            <% } %>
+    </section>
+    <section id="feed-posts">
+
+        <!-- <h3>Post</h3> -->
+
+
+        <% if(locals.user) {%>
+            <div id="post-form">
+                <div id="welcome-user">Welcome, <%= user.name %>!</div>
+                <form action="/post/create" id="new-post-form" method="Post">
+                    <textarea id="post-content" name="content" cols="30" rows="3"
+                        placeholder="What's on your mind?"></textarea>
+                    <br>
+                    <button type="submit">Post</button>
+
+                </form>
+            </div>
+            <%}%>
+
+                <div id='posts-container'>
+                    <ul>
+                        <% for(post of posts){%>
+
+                            <%-include('_post')-%>
+                                <%}%>
+                    </ul>
+                </div>
+    </section>
+    <% if(locals.user) {%>
+        <section id="user-friends">
+            <div id="user-friends-header">Your Friends</div>
+            <% for(let u of all_users) {%>
+                <div class="user-friends-list"><a href="/users/profile/<%= u._id %>">
+                        <%= u.name %>
+                    </a></div>
+                <% } %>
+        </section>
+        <% } %>
+</div>
+<script src="js/toggle_likes.js"></script>
+<script src="/js/home_post.js"></script>
